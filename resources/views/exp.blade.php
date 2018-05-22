@@ -134,28 +134,20 @@
 	<div class="container">
 	<div class="container">
 	<ul class="nav nav-tabs">
-			@switch($act)
-			@case (1)
-				<li class="active"><a href="{{url('ver_expediente', [$expediente->cid_expediente, $act=1])}}">Resumen</a></li>
+			
 				<li><a href="{{url('ver_expediente', [$expediente->cid_expediente, $act=1])}}">Resumen</a></li>
 			    <li><a href="{{url('ver_expediente', [$expediente->cid_expediente, $act=2])}}">Pasajeros</a></li>
-			    <li><a href="#">Menu 2</a></li>
+			    <li><a href="{{url('ver_expediente', [$expediente->cid_expediente, $act=3])}}">Cobranza</a></li>
 			    <li><a href="#">Menu 3</a></li>
-			@break
-			
-				<li class="active"><a href="{{url('ver_expediente', [$expediente->cid_expediente, $act=1])}}">Resumen</a></li>
-		   
-			    <li><a href="{{url('ver_expediente', [$expediente->cid_expediente, $act=1])}}">Resumen</a></li>
-			    <li><a href="{{url('ver_expediente', [$expediente->cid_expediente, $act=1])}}">Resumen</a></li>
-			    <li><a href="{{url('ver_expediente', [$expediente->cid_expediente, $act=2])}}">Pasajeros</a></li>
-			    <li><a href="#">Menu 2</a></li>
-			    <li><a href="#">Menu 3</a></li>
-		    @endswitch
 		</ul>
 		  <br>
 
 
 	@yield('content')
+	<footer class="container-fluid text-center">
+  <p>MEGA TRAVEL </p>  
+  
+</footer>
 
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

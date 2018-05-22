@@ -68,11 +68,15 @@ class ExpedienteController extends Controller {
             ->first();
             switch ($act) {
             	case 1:
-            		return view('resumen', array('expediente' => $expediente), array('act'=>$act));
+            		return view('resumen', array('expediente' => $expediente));
             		break;
             	case 2:
             	$pasajeros=Pasajero::where('cid_expediente',$exp)->get();
-            		return view('pasajeros', array('expediente' => $expediente), array('act'=>$act), array('pasajeros'=>$pasajeros));
+            		return view('pasajeros', array('expediente' => $expediente), array('pasajeros'=>$pasajeros));
+            		break;
+            	case 3:
+            	$pasajeros=Pasajero::where('cid_expediente',$exp)->get();
+            		return view('cobranza', array('expediente' => $expediente), array('pasajeros'=>$pasajeros));
             		break;
             	
             	default:

@@ -13,52 +13,51 @@
 		  <br>
 		  <div class="container">
 		  	<div class="row">
-		  		<div class="panel panel-default">
+		  		<div class="panel panel-primary">
 					<div class="panel-body" >
 					  	<div class="col-md-2">
 							<div class="form-group">
-							    <label>Apellido Paterno</label>   
+							    <label>Fecha Límite de Pago</label>   
 							    <input type="txt" name="" class="form-control" >
 							</div>
 						</div>
 						<div class="col-md-2">
 							<div class="form-group">
-							    <label>Apellido Materno</label>   
+							    <label>T. C. Consolidado</label>   
 							    <input type="txt" name="" class="form-control">
 							</div>
 						</div>
 						<div class="col-md-2">
 							<div class="form-group">
-							    <label>Nombre(s)</label>   
-							    <input type="txt" name="" class="form-control">
+							    <label>Total Paquete</label>   
+							    <input type="txt" name="" class="form-control"><label>USD</label> 
 							</div>
 						</div>
 						<div class="col-md-2">
-							<div class="form-group">
-							    <label>Título</label>   
-							    <select class="form-control">
-							    	<option></option>
-							    </select>
+							<label>Mínimo a Pagar</label>   
+							<div class="input-group">
+							    <input type="text" value="" class="form-control">
+							     <span class="input-group-addon">USD</span>
 							</div>
 						</div>
-						<div class="col-md-1">
-							<div class="checkbox">
-							      <label><input type="checkbox" value="">Pasajero Principal</label>
-							</div>
+						<div class="col-md-2">
+							 <label>Importe a Pagar</label> 
+							<div class="input-group">
+						      <input id="" type="text" class="form-control" name="" >
+						      <span class="input-group-addon">USD</span>
+						      
+						    </div>
 						</div>
-						<div class="col-md-3">
-							<br><br>
-							<button type="button" class="btn btn-success">Agregar</button>
-							<button type="button" class="btn btn-warning">Editar</button>
-							<button type="button" class="btn btn-danger">Eliminar</button>
-						</div>
+
+					
+					
 					</div>
 				</div>
 			</div>
 		
 				<div class="row">
 					<div class="panel panel-primary">
-						<div class="panel-heading">Pasajeros</div>
+						<div class="panel-heading">Pagos</div>
 						<div class="panel-body" >
 							<div class="texto col-md-10">
 								
