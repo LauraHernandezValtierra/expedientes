@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Expediente;
+use App\Pasajero;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
@@ -21,7 +22,7 @@ class ExpedienteController extends Controller {
             ->join('tdestpack', 'expo_mov.cid_destin', '=', 'tdestpack.cid_destpack')
             ->join('tclientes', 'expediente.cid_cliente', '=', 'tclientes.cid_cliente')
             ->select('expo_mov.cid_cotiza as cid_cotizacion', 'expediente.cid_expediente', 'expediente.dfecha as dfecha', 'expediente.chora','expo_mov.cid_destin', 'tdestpack.cdestpack as paquete', 'tclientes.capellidop as capellidop', 'tclientes.cid_cliente as cid_cliente','tclientes.cnombre as cnombre','tclientes.capellidom as capellidom', 
-'expediente.inicempleado', 'expediente.numempleado', 'expediente.pax', 'expediente.dfechasalida','expediente.nomempleado')
+'expediente.inicempleado', 'expediente.numempleado', 'expediente.pax as pax', 'expediente.dfechasalida','expediente.nomempleado')
             ->get();
 		return view('lista_expedientes',array('expediente' => $expediente));
 	}
@@ -67,10 +68,11 @@ class ExpedienteController extends Controller {
             ->first();
             switch ($act) {
             	case 1:
-            		return view('resumen', array('expediente' => $expediente));
+            		return view('resumen', array('expediente' => $expediente), array('act'=>$act));
             		break;
             	case 2:
-            		return view('pasajeros', array('expediente' => $expediente));
+            	$pasajeros=Pasajero::where('cid_expediente',$exp)->get();
+            		return view('pasajeros', array('expediente' => $expediente), array('act'=>$act), array('pasajeros'=>$pasajeros));
             		break;
             	
             	default:
